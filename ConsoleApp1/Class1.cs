@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Threading.Tasks;
+using System.Net.Http;
+
 
 namespace ConsoleApp1
 {
@@ -22,19 +24,19 @@ namespace ConsoleApp1
             bool append = false;
             while(true)
             {
-                if(ans == "y" || ans == "yes")
+                if(ans == "J" || ans == "Ja")
                 {
                     append = true;
                     break;
                 }
-                else if(ans == "n" || ans == "no")
+                else if(ans == "N" || ans == "No")
                 {
                     append = false;
                     break;
                 }
                 else
                 {
-                    Console.WriteLine("vänligen skriv ja eller nej.");
+                    Console.WriteLine("vänligen skriv Ja eller Nej.");
                     break;
                 }
             }
