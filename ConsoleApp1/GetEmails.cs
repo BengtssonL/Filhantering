@@ -18,9 +18,9 @@ namespace ConsoleApp1
         //get the content of the web page passed in 
         private string RetrieveContent(string webPage)
         {
-            HttpWebResponse response = null;//used to get response 
+            HttpWebResponse response = null; //används för responsen 
 
-            StreamReader respStream = null;//used to read response into string 
+            StreamReader respStream = null;//används till att göra om responsen till string
             try
             {
                 //gör en request som skickas till sidan  
@@ -48,16 +48,16 @@ namespace ConsoleApp1
         }
 
 
-        //letar efter alla länkar på sidan. 
+        
         private void GetAllEmails(string content)
         {
-            //regular expression 
+            //alla tecken som programmet ska leta efter
             string pattern = @"(([\w-]+\.)+[\w-]+|([a-zA-Z]{1}|[\w-]{2,}))@" + @"((([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\.([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\." + @"([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\.([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])){1}|" + @"([a-zA-Z]+[\w-]+\.)+[a-zA-Z]{2,4})";
 
-            //Set up regex object 
+            //Sätter upp regex 
             Regex RegExpr = new Regex(pattern, RegexOptions.IgnoreCase);
 
-            //get the first match 
+            //får första träffen  
             Match match = RegExpr.Match(content);
 
 
